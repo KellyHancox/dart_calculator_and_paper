@@ -28,7 +28,7 @@ division(double currVal, double newVal){
 }
 
 
-Future main() async {
+main() {
   runApp(ng.AppComponentNgFactory);
 
 
