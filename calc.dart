@@ -1,10 +1,6 @@
-import 'dart:convert';
 import 'package:angular/angular.dart';
 import 'package:hello_world/app_component.template.dart' as ng;
-import 'dart:html';
 import 'dart:io';
-
-
 
 addition( double currVal, double newVal ){
   return currVal + newVal;
@@ -28,19 +24,20 @@ division(double currVal, double newVal){
 }
 
 
-main() {
+main(){
   runApp(ng.AppComponentNgFactory);
 
 
   print('Please enter value to start');
 
-  double currVal = stdin.readLineSync(encoding: Encoding.UTF_8);
+  var value = stdin.readLineSync();
+  double currVal = double.parse(value);
 
   print('Now please enter a mathematical symbol (+, -, *, /) followed by \n'
       'a number to add, subtract, multiply or divide with your current number.\n '
       'Enter \'quit\' to quit');
 
-  var line = stdin.readLineSync(encoding: Encoding.UTF_8);
+  var line = stdin.readLineSync();
 
   var splitLine = const [];
   splitLine = line.split(" ");
@@ -85,7 +82,7 @@ main() {
         'a number to add, subtract, multiply or divide with your current number.\n '
         'Enter \'quit\' to quit');
 
-    line = stdin.readLineSync(encoding: Encoding.UTF_8);
+    line = stdin.readLineSync();
 
     splitLine = line.split(" ");
     symbol = splitLine[0];
